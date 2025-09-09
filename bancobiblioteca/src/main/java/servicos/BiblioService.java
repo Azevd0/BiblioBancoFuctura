@@ -25,9 +25,23 @@ public class BiblioService {
 	}
 	
 	public void newItem() {
-		System.out.println("Qual tipo de item você quer adicionar?\n1 - Livro\n2 - Álbum musical\n3 - Revista");
-		int tipo = scan.nextInt();
-		scan.nextLine();
+		int tipo = -1;
+		while (tipo < 1 || tipo > 3) { // equanto tipo for -1
+		    System.out.println("Qual tipo de item você quer adicionar?\n1 - Livro\n2 - Álbum musical\n3 - Revista");
+		    
+		    if (!scan.hasNextInt()) {
+		        System.out.println("Digite apenas números válidos (1, 2 ou 3).");
+		        scan.next();
+		        continue;
+		    }
+		    
+		    tipo = scan.nextInt();//
+		    scan.nextLine();
+		    
+		    if (tipo < 1 || tipo > 3) {
+		        System.out.println("Opção inválida! Escolha 1, 2 ou 3.");
+		    }
+		}
 
 		Item novoItem = null;
 
@@ -35,7 +49,12 @@ public class BiblioService {
 	        String categoria = lerCampoObrigatorio("a categoria");
 	        String autor = lerCampoObrigatorio("o autor");
 	        String ano = lerCampoObrigatorio("O ano");
-
+	        //estou validando aqui se o titulo ja existe 
+	        if (itemdao.findByName(titulo) != null) {
+	            System.out.println("Já existe um item cadastrado com o título \"" + titulo + "\"");
+	            return;
+	        }
+	        
 		switch (tipo) {
 		case 1:
 			novoItem = new Livro(titulo, categoria, autor,ano);
@@ -120,6 +139,7 @@ public class BiblioService {
 		
 	}
 }
+
 
 
 
