@@ -113,12 +113,13 @@ public class BiblioService {
 		String titulo  = scan.nextLine();
 		Item achado = itemdao.findByName(titulo );
 		if(achado == null) {
-			System.out.println("Item " +titulo + " não foi encontrado");
+			System.out.println("Item \"" +titulo + "\" não foi encontrado");
 		} else {
 			System.out.println("Encontrado:\n" + achado.toString() );
 			}
 		
 	}
 }
+
 
 
