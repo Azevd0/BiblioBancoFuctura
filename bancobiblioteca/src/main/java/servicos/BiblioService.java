@@ -46,13 +46,13 @@ public class BiblioService {
 		Item novoItem = null;
 
 		  String titulo = lerCampoObrigatorio("o título");
-	        if (itemdao.findByName(titulo) != null) { //estou validando aqui se o titulo ja existe 
-	            System.out.println("Já existe um item cadastrado com o título \"" + titulo + "\"");
-	            return;
-	        }
 	        String categoria = lerCampoObrigatorio("a categoria");
 	        String autor = lerCampoObrigatorio("o autor");
 	        String ano = lerCampoObrigatorio("O ano");
+		    if (itemdao.findByName(titulo) != null) { //estou validando aqui se o titulo ja existe 
+	            System.out.println("Já existe um item cadastrado com o título \"" + titulo + "\"");
+	            return;
+	        }
 	       
 	        
 		switch (tipo) {
@@ -139,6 +139,7 @@ public class BiblioService {
 		
 	}
 }
+
 
 
 
