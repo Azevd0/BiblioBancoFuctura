@@ -40,16 +40,16 @@ public class BiblioDao {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		em.getTransaction().begin();
 		try {
-			String jpql = "SELECT i FROM Item i WHERE LOWER(i.titulo) = LOWER(:titulo)"; // Selecione item onde está o titulo
-			Item item = em.createQuery(jpql, Item.class).setParameter("titulo", titulo).getSingleResult();// formata a string jpql para Item; converte "titulo" em uma variavel
-			em.remove(item); // remove o item se for encontrado
+			String jpql = "SELECT i FROM Item i WHERE LOWER(i.titulo) = LOWER(:titulo)"; 
+			Item item = em.createQuery(jpql, Item.class).setParameter("titulo", titulo).getSingleResult();
+			em.remove(item);
 			em.getTransaction().commit();
-			return true; // condiçao verdadeira
+			return true;
 		} catch (Exception e) {
-			if(em.getTransaction().isActive()) { // se der errado, dá um rollback
+			if(em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
-			return false; // condiçao falsa
+			return false; 
 		} finally {
 			em.close();
 		}
@@ -76,3 +76,4 @@ public class BiblioDao {
 	    }
 	}
 }
+
