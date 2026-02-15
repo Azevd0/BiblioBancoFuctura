@@ -1,20 +1,7 @@
-## 📚 Sistema de Biblioteca – Java + JPA
+## 📚 Biblioteca Java
 
 Este projeto é uma aplicação Java que implementa um sistema de catálogo de biblioteca, utilizando JPA/Hibernate, padrão DAO, herança entre entidades e interação via console.
 Permite cadastrar, listar, buscar e remover itens como Livros, Revistas e Álbuns.
-
-É ideal para estudos de:
-
-Java orientado a objetos
-
-Herança com JPA (@Inheritance(strategy = InheritanceType.JOINED))
-
-CRUD com Hibernate
-
-Boas práticas com DAO/Service
-
-Validações e menu interativo no console
-
 
 ## 🧰 Tecnologias Utilizadas
 
