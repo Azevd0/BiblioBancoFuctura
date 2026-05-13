@@ -17,6 +17,8 @@ Padrão DAO + Service
 
 Herança entre entidades (JOINED)
 
+Docker Compose
+
 ## 📌 Funcionalidades do Sistema
 ### Antes de tudo, preencha as credenciais do banco no persistence.xml e no docker-compose.yml
 
