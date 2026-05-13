@@ -11,42 +11,14 @@ Jakarta Persistence API (JPA)
 
 Hibernate
 
-MySQL / PostgreSQL / H2 (dependendo da configuração do persistence.xml)
+PostgreSQL / H2 (dependendo da configuração do persistence.xml)
 
 Padrão DAO + Service
 
 Herança entre entidades (JOINED)
 
-## 🧱 Modelagem de Herança
-
-A classe base abstrata Item contém os atributos comuns:
-
-id
-
-titulo
-
-categoria
-
-autor
-
-ano
-
-Cada tipo específico é uma entidade:
-
-Livro
-
-Revista
-
-Album
-
-Todas usam:
-
-@Inheritance(strategy = InheritanceType.JOINED)
-
-
-🔹 Isso faz com que cada subclasse gere uma tabela própria, ligada por chave estrangeira à tabela Item.
-
 ## 📌 Funcionalidades do Sistema
+### Antes de tudo, preencha as credenciais do banco no persistence.xml e no docker-compose.yml
 
 O menu principal oferece:
 
