@@ -1,4 +1,4 @@
-## 📚 Biblioteca Java
+## 📚 Biblioteca Virtual
 
 Este projeto é uma aplicação Java que implementa um sistema de catálogo de biblioteca, utilizando JPA/Hibernate, padrão DAO, herança entre entidades e interação via console.
 Permite cadastrar, listar, buscar e remover itens como Livros, Revistas e Álbuns.
